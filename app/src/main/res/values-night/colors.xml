@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="theme_color">#5C913B</color>
+    <color name="theme_color_dark">#3B6324</color>
+    <color name="theme_color_light">#6FA355</color>
+
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#C0C0C0</color>
+    <color name="text_light">#FFFFFF</color>
+
+    <color name="gray_100">#E4E4E4</color>
+    <color name="gray_200">#D5D5D5</color>
+    <color name="gray_300">#D0D0D0</color>
+
+    <color name="background_light">#121212</color>
+    <color name="background_card">#1E1E1E</color>
+
+    <color name="border_color">#333333</color>
+
+    <color name="progress_color">#7FB864</color>
+    <color name="progress_background">#2E3A2A</color>
+    <color name="input_background">#5F5F5F</color>
+
+</resources>

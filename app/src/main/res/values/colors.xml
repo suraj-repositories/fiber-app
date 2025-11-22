@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="theme_color">#5C913B</color>
+    <color name="theme_color_dark">#3B6324</color>
+    <color name="theme_color_light">#6FA355</color>
+
+    <color name="text_primary">#373737</color>
+    <color name="text_secondary">#555555</color>
+
+    <color name="text_light">#222222</color>
+    <color name="text_white">#FFFFFF</color>
+
+    <color name="gray_100">#E4E4E4</color>
+    <color name="gray_200">#D5D5D5</color>
+    <color name="gray_300">#D0D0D0</color>
+
+
+    <color name="background_light">#FFFFFF</color>
+    <color name="background_card">#F3F3F3</color>
+
+    <color name="border_color">#DDDDDD</color>
+
+    <color name="progress_color">#5C913B</color>
+    <color name="progress_background">#B5C6A5</color>
+
+    <color name="danger">#FF3012</color>
+    <color name="danger_background">#FFD2D2</color>
+    <color name="danger_border">#86883535</color>
+
+    <color name="input_background">#EEEEEE</color>
+
+
+</resources>
