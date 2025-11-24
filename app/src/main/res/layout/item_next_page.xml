@@ -1,10 +1,13 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:id="@+id/customCard"
     app:cardCornerRadius="14dp"
+
     app:cardElevation="3dp"
-    android:layout_margin="8dp"
     app:cardUseCompatPadding="true"
     app:cardBackgroundColor="@color/background_card">
 
@@ -15,19 +18,55 @@
         android:gravity="center_vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/title"
+        <!-- Avatar Circle -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/gray_100">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_menu_gallery"
+                app:tint="#000000"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Title + Subtitle -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Custom Device"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
 
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom Device"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary"/>
+
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="..."
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <!-- Button -->
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Open"/>
+            android:text="Open"
+            android:backgroundTint="@color/theme_color"/>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

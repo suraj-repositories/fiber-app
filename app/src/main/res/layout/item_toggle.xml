@@ -1,10 +1,12 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="0dp"
     app:cardCornerRadius="14dp"
     app:cardElevation="3dp"
-    android:layout_margin="8dp"
     app:cardUseCompatPadding="true"
     app:cardBackgroundColor="@color/background_card">
 
@@ -15,15 +17,50 @@
         android:gravity="center_vertical"
         android:padding="16dp">
 
-        <TextView
-            android:id="@+id/title"
+        <!-- Icon Circle (same style as your second layout) -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="@color/gray_100">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@android:drawable/ic_lock_power_off"
+                app:tint="#000000"/>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Left text section -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Toggle Device"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
 
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toggle Device"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/text_secondary"/>
+
+            <!-- Optional subtitle (you can remove if not needed) -->
+            <TextView
+                android:id="@+id/sub_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Device Control"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"/>
+        </LinearLayout>
+
+        <!-- Switch -->
         <Switch
             android:id="@+id/toggle"
             android:layout_width="wrap_content"

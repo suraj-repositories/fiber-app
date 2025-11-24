@@ -28,6 +28,14 @@
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
 
+    <fragment
+        android:id="@+id/nextPageDetailFragment"
+        android:name="com.oranbyte.fiber.NextPageDetailFragment"
+        android:label="Device Detail">
+        <argument
+            android:name="device_key"
+            app:argType="string" />
+    </fragment>
 
 
 </navigation>

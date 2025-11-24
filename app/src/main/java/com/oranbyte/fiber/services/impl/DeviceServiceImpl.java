@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.oranbyte.fiber.api.DeviceApi;
 import com.oranbyte.fiber.models.ApiResponse;
+import com.oranbyte.fiber.models.Device;
 import com.oranbyte.fiber.network.RetrofitClient;
 import com.oranbyte.fiber.services.DeviceService;
 import com.oranbyte.fiber.services.SessionManager;
@@ -39,6 +40,15 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
+    public void getDeviceIcons(Callback<ApiResponse> callback) {
+        Call<ApiResponse> call = deviceApi.getDeviceIcons(
+                "Bearer " + authToken
+        );
+
+        call.enqueue(callback);
+    }
+
+    @Override
     public void getDevices(Callback<ApiResponse> callback) {
 
         Call<ApiResponse> call = deviceApi.getDevices(
@@ -57,6 +67,25 @@ public class DeviceServiceImpl implements DeviceService {
         Call<ApiResponse> call = deviceApi.updateDeviceValue(
                 "Bearer " + authToken,
                 body
+        );
+        call.enqueue(callback);
+    }
+
+    @Override
+    public void getDevice(String deviceKey, Callback<ApiResponse> callback) {
+        Call<ApiResponse> call = deviceApi.getDevice(
+                "Bearer " + authToken,
+                deviceKey
+        );
+
+        call.enqueue(callback);
+    }
+
+    @Override
+    public void createDevice(Device device, Callback<ApiResponse> callback) {
+        Call<ApiResponse> call = deviceApi.createDevice(
+                "Bearer " + authToken,
+                device
         );
         call.enqueue(callback);
     }

@@ -178,79 +178,98 @@
                     android:layout_marginBottom="16dp"/>
 
                 <!-- Type Selector -->
+<!--                <HorizontalScrollView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:scrollbars="none"-->
+<!--                    android:overScrollMode="never">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:paddingBottom="8dp">-->
+
+
+
+<!--                        &lt;!&ndash; Unselected &ndash;&gt;-->
+<!--                        <androidx.cardview.widget.CardView-->
+<!--                            android:id="@+id/icon_option_2"-->
+<!--                            android:layout_width="64dp"-->
+<!--                            android:layout_height="64dp"-->
+<!--                            app:cardCornerRadius="32dp"-->
+<!--                            app:cardBackgroundColor="@color/background_light"-->
+<!--                            app:cardElevation="0dp"-->
+<!--                            android:layout_marginEnd="16dp">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="32dp"-->
+<!--                                android:layout_height="32dp"-->
+<!--                                android:src="@drawable/blub_icon"-->
+<!--                                app:tint="@color/theme_color"-->
+<!--                                android:layout_gravity="center"/>-->
+<!--                        </androidx.cardview.widget.CardView>-->
+
+<!--                        <androidx.cardview.widget.CardView-->
+<!--                            android:id="@+id/icon_option_3"-->
+<!--                            android:layout_width="64dp"-->
+<!--                            android:layout_height="64dp"-->
+<!--                            app:cardCornerRadius="32dp"-->
+<!--                            app:cardBackgroundColor="@color/background_light"-->
+<!--                            app:cardElevation="0dp"-->
+<!--                            android:layout_marginEnd="16dp">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="32dp"-->
+<!--                                android:layout_height="32dp"-->
+<!--                                android:src="@drawable/fan_icon"-->
+<!--                                app:tint="@color/theme_color"-->
+<!--                                android:layout_gravity="center"/>-->
+<!--                        </androidx.cardview.widget.CardView>-->
+
+<!--                        &lt;!&ndash; Selected &ndash;&gt;-->
+<!--                        <androidx.cardview.widget.CardView-->
+<!--                            android:id="@+id/icon_option_1"-->
+<!--                            android:layout_width="64dp"-->
+<!--                            android:layout_height="64dp"-->
+<!--                            app:cardCornerRadius="32dp"-->
+<!--                            app:cardBackgroundColor="@color/theme_color"-->
+<!--                            app:cardElevation="0dp"-->
+<!--                            android:layout_marginEnd="14dp">-->
+
+<!--                            <ImageView-->
+<!--                                android:layout_width="32dp"-->
+<!--                                android:layout_height="32dp"-->
+<!--                                android:src="@drawable/category_icon"-->
+<!--                                app:tint="@color/text_white"-->
+<!--                                android:layout_gravity="center"/>-->
+<!--                        </androidx.cardview.widget.CardView>-->
+
+<!--                    </LinearLayout>-->
+<!--                </HorizontalScrollView>-->
+
+
+
                 <HorizontalScrollView
+                    android:id="@+id/horizontal_scroll"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scrollbars="none"
                     android:overScrollMode="never">
 
                     <LinearLayout
+                        android:id="@+id/device_icon_container"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
-                        android:paddingBottom="8dp">
-
-                        <!-- Selected -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/icon_option_1"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            app:cardCornerRadius="32dp"
-                            app:cardBackgroundColor="@color/theme_color"
-                            app:cardElevation="0dp"
-                            android:layout_marginEnd="14dp">
-
-                            <ImageView
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
-                                android:src="@drawable/category_icon"
-                                app:tint="@color/text_white"
-                                android:layout_gravity="center"/>
-                        </androidx.cardview.widget.CardView>
-
-                        <!-- Unselected -->
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/icon_option_2"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            app:cardCornerRadius="32dp"
-                            app:cardBackgroundColor="@color/background_light"
-                            app:cardElevation="0dp"
-                            android:layout_marginEnd="16dp">
-
-                            <ImageView
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
-                                android:src="@drawable/blub_icon"
-                                app:tint="@color/theme_color"
-                                android:layout_gravity="center"/>
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:id="@+id/icon_option_3"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            app:cardCornerRadius="32dp"
-                            app:cardBackgroundColor="@color/background_light"
-                            app:cardElevation="0dp"
-                            android:layout_marginEnd="16dp">
-
-                            <ImageView
-                                android:layout_width="32dp"
-                                android:layout_height="32dp"
-                                android:src="@drawable/fan_icon"
-                                app:tint="@color/theme_color"
-                                android:layout_gravity="center"/>
-                        </androidx.cardview.widget.CardView>
-
-                    </LinearLayout>
+                        android:paddingBottom="8dp"/>
                 </HorizontalScrollView>
 
             </LinearLayout>
 
         <!-- Save button -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_save_device"
+            android:id="@+id/save_device_btn"
             android:layout_width="match_parent"
             android:layout_height="70dp"
             android:text="Save Device"

@@ -3,7 +3,10 @@ package com.oranbyte.fiber;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -11,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
@@ -27,6 +31,13 @@ public class ControlPanel extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.setStatusBarColor(
+                ContextCompat.getColor(this, R.color.background_light)
+        );
+
         setContentView(R.layout.activity_control_panel);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -79,6 +90,8 @@ public class ControlPanel extends AppCompatActivity {
 
             userProfile.setOnClickListener(v -> navController.navigate(R.id.profileFragment));
         }
+
+        Log.d("REGULAR_CHECKUP", "this part is running");
     }
 
     @Override

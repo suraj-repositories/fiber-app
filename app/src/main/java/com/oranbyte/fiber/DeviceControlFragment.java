@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.google.gson.Gson;
@@ -51,8 +52,9 @@ public class DeviceControlFragment extends Fragment {
 
         deviceService = new DeviceServiceImpl(requireContext());
 
-        // Setup RecyclerView and Adapter
         devices = new java.util.ArrayList<>();
+
+        Log.d("REGULAR_CHECKUP", "this part is running at view created");
         adapter = new DeviceAdapter(devices, new DeviceAdapter.DeviceListener() {
             @Override
             public void onToggle(Device device, boolean value) {
@@ -81,12 +83,15 @@ public class DeviceControlFragment extends Fragment {
             @Override
             public void onOpenDetail(Device device) {
 
-                Fragment f = NextPageDetailFragment.newInstance(device.getDevice_key());
-                requireActivity().getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, f)
-                        .addToBackStack(null)
-                        .commitAllowingStateLoss();
+                Bundle b = new Bundle();
+                b.putString("device_key", device.getDevice_key());
+
+                if (isAdded()) {
+                    NavHostFragment.findNavController(DeviceControlFragment.this)
+                            .navigate(R.id.nextPageDetailFragment, b);
+
+                }
+
             }
         });
 
@@ -96,6 +101,8 @@ public class DeviceControlFragment extends Fragment {
         binding.swipeRefresh.setOnRefreshListener(this::loadDevices);
 
         loadDevices();
+
+        Log.d("REGULAR_CHECKUP", "finish part is running at view created");
     }
 
     private void loadDevices() {
@@ -104,12 +111,11 @@ public class DeviceControlFragment extends Fragment {
         deviceService.getDevices(new Callback<ApiResponse>() {
             @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                if (!isAdded()) return;
+                if (!isAdded() || binding == null) return;
                 binding.swipeRefresh.setRefreshing(false);
 
-
                 if (!response.isSuccessful() || response.body() == null) {
-                    Log.e("API_ERROR", "Error: " + response.code());
+                    Log.e("API_ERROR_Z", "Error: " + response.code());
                     return;
                 }
 
@@ -121,18 +127,22 @@ public class DeviceControlFragment extends Fragment {
                 }
 
                 String json = gson.toJson(api.getData());
-                Log.d("DEVICES-JSON", json);
 
                 devices.clear();
                 devices.addAll(gson.fromJson(json, new TypeToken<List<Device>>() {}.getType()));
 
+                Log.d("DEVICES-JSON", json);
+                Log.d("Starting updator: ", "ON");
+
                 adapter.notifyDataSetChanged();
+
+
             }
 
             @Override
             public void onFailure(Call<ApiResponse> call, Throwable t) {
                 binding.swipeRefresh.setRefreshing(false);
-                Log.e("API_ERROR", t.getMessage());
+                Log.e("API_ERROR_R", t.getMessage());
             }
         });
     }
