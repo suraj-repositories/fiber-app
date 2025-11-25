@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_light"
+    android:clipToPadding="false"
     android:fillViewport="true"
     android:paddingBottom="120dp"
-    android:clipToPadding="false"
     tools:context=".CreateDeviceActivity">
 
     <LinearLayout
@@ -21,266 +20,382 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add New Device"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/text_light"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="24dp"
-            android:layout_marginTop="10dp"/>
+            android:text="Add New Device"
+            android:textColor="@color/text_light"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Device Name -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Device Name"
+                android:textColor="@color/text_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/device_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_field_bg"
+                android:hint="e.g., Ceiling Fan"
+                android:inputType="text"
+                android:padding="14dp"
+                android:textColor="?attr/colorOnBackground" />
+
+            <!-- Location -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:text="Sub Title / Location"
+                android:textColor="@color/text_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/subtitle_input"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_field_bg"
+                android:hint="e.g., Living room"
+                android:inputType="text"
+                android:padding="14dp"
+                android:textColor="?attr/colorOnBackground" />
+
+
+            <!-- Device Key -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="Create Device Key"
+                android:textColor="@color/text_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/device_key_input"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_field_bg"
+                android:hint="e.g., bulb-1, fan-1"
+                android:inputType="text"
+                android:padding="14dp"
+                android:textColor="?attr/colorOnBackground" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="Select Type"
+                android:textColor="@color/text_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/select_type_btn"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_field_bg"
+                android:drawableEnd="@drawable/ic_arrow_down"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:padding="14dp"
+                android:text="Choose type"
+                android:textColor="?attr/colorOnBackground" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="4dp"
+                android:weightSum="1">
 
-                <!-- Device Name -->
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/values_title"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Device Name"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_light"
-                    android:layout_marginBottom="5dp"/>
-
-                <EditText
-                    android:id="@+id/device_name_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="1dp"
-                    android:background="@drawable/input_field_bg"
-                    android:hint="e.g., Ceiling Fan"
-                    android:inputType="text"
-                    android:padding="14dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="12dp"
-                    android:textColor="?attr/colorOnBackground"/>
-
-                <!-- Location -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sub Title / Location"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
+                    android:layout_weight="0.8"
+                    android:text="Add Values"
                     android:textColor="@color/text_light"
-                    android:layout_marginBottom="5dp"/>
+                    android:textStyle="bold" />
 
-                <EditText
-                    android:id="@+id/subtitle_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="1dp"
-                    android:background="@drawable/input_field_bg"
-                    android:hint="e.g., Living room"
-                    android:inputType="text"
-                    android:padding="14dp"
-                    android:layout_marginBottom="12dp"
-                    android:textColor="?attr/colorOnBackground"/>
-
-
-                <!-- Device Key -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Create Device Key"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/text_light"
-                    android:layout_marginBottom="12dp"/>
-
-                <EditText
-                    android:id="@+id/device_key_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="1dp"
-                    android:background="@drawable/input_field_bg"
-                    android:hint="e.g., bulb-1, fan-1"
-                    android:inputType="text"
-                    android:padding="14dp"
-                    android:layout_marginBottom="12dp"
-                    android:textColor="?attr/colorOnBackground"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Select Type"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/text_light"
-                    android:layout_marginBottom="12dp"/>
-
-                <TextView
-                    android:id="@+id/select_type_btn"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:gravity="center_vertical"
-                    android:padding="14dp"
-                    android:background="@drawable/input_field_bg"
-                    android:text="Choose type"
-                    android:textColor="?attr/colorOnBackground"
-                    android:drawableEnd="@drawable/ic_arrow_down"
-                    android:drawablePadding="10dp"
-                    android:layout_marginBottom="12dp"/>
-
-                <TextView
-                    android:id="@+id/point_time_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Point Time"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/text_light"
-                    android:layout_marginBottom="12dp"/>
-
-                <EditText
-                    android:id="@+id/point_time_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="1dp"
-                    android:background="@drawable/input_field_bg"
-                    android:hint="Select Date - Time"
-                    android:focusable="false"
-                    android:clickable="true"
-                    android:padding="14dp"
-                    android:layout_marginBottom="12dp"
-                    android:textColor="?attr/colorOnBackground"/>
-
-                <TextView
-                    android:id="@+id/minute_time_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Time in Minutes"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/text_light"
-                    android:layout_marginBottom="12dp"/>
-
-                <EditText
-                    android:id="@+id/minute_time_input"
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="1dp"
-                    android:background="@drawable/input_field_bg"
-                    android:hint="e.g. 10, 15, 30"
-                    android:inputType="number"
-                    android:padding="14dp"
-                    android:layout_marginBottom="12dp"
-                    android:textColor="?attr/colorOnBackground"/>
-
-                <!-- Choose Type -->
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Choose Type"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/text_light"
-                    android:layout_marginBottom="16dp"/>
-
-                <!-- Type Selector -->
-<!--                <HorizontalScrollView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:scrollbars="none"-->
-<!--                    android:overScrollMode="never">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="horizontal"-->
-<!--                        android:paddingBottom="8dp">-->
-
-
-
-<!--                        &lt;!&ndash; Unselected &ndash;&gt;-->
-<!--                        <androidx.cardview.widget.CardView-->
-<!--                            android:id="@+id/icon_option_2"-->
-<!--                            android:layout_width="64dp"-->
-<!--                            android:layout_height="64dp"-->
-<!--                            app:cardCornerRadius="32dp"-->
-<!--                            app:cardBackgroundColor="@color/background_light"-->
-<!--                            app:cardElevation="0dp"-->
-<!--                            android:layout_marginEnd="16dp">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="32dp"-->
-<!--                                android:layout_height="32dp"-->
-<!--                                android:src="@drawable/blub_icon"-->
-<!--                                app:tint="@color/theme_color"-->
-<!--                                android:layout_gravity="center"/>-->
-<!--                        </androidx.cardview.widget.CardView>-->
-
-<!--                        <androidx.cardview.widget.CardView-->
-<!--                            android:id="@+id/icon_option_3"-->
-<!--                            android:layout_width="64dp"-->
-<!--                            android:layout_height="64dp"-->
-<!--                            app:cardCornerRadius="32dp"-->
-<!--                            app:cardBackgroundColor="@color/background_light"-->
-<!--                            app:cardElevation="0dp"-->
-<!--                            android:layout_marginEnd="16dp">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="32dp"-->
-<!--                                android:layout_height="32dp"-->
-<!--                                android:src="@drawable/fan_icon"-->
-<!--                                app:tint="@color/theme_color"-->
-<!--                                android:layout_gravity="center"/>-->
-<!--                        </androidx.cardview.widget.CardView>-->
-
-<!--                        &lt;!&ndash; Selected &ndash;&gt;-->
-<!--                        <androidx.cardview.widget.CardView-->
-<!--                            android:id="@+id/icon_option_1"-->
-<!--                            android:layout_width="64dp"-->
-<!--                            android:layout_height="64dp"-->
-<!--                            app:cardCornerRadius="32dp"-->
-<!--                            app:cardBackgroundColor="@color/theme_color"-->
-<!--                            app:cardElevation="0dp"-->
-<!--                            android:layout_marginEnd="14dp">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="32dp"-->
-<!--                                android:layout_height="32dp"-->
-<!--                                android:src="@drawable/category_icon"-->
-<!--                                app:tint="@color/text_white"-->
-<!--                                android:layout_gravity="center"/>-->
-<!--                        </androidx.cardview.widget.CardView>-->
-
-<!--                    </LinearLayout>-->
-<!--                </HorizontalScrollView>-->
-
-
-
-                <HorizontalScrollView
-                    android:id="@+id/horizontal_scroll"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scrollbars="none"
-                    android:overScrollMode="never">
-
-                    <LinearLayout
-                        android:id="@+id/device_icon_container"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:paddingBottom="8dp"/>
-                </HorizontalScrollView>
+                <Button
+                    android:id="@+id/your_button"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0.2"
+                    android:backgroundTint="@color/background_card"
+                    android:padding="5dp"
+                    android:paddingHorizontal="0dp"
+                    android:text="+ Add"
+                    android:textColor="@color/text_primary"
+                    android:textSize="14sp" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/no_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="No values selected"
+                android:textColor="@color/gray_300" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="6dp"
+                android:paddingHorizontal="10dp"
+                app:cardBackgroundColor="@color/progress_background"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <!-- Left side (texts) -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Title row -->
+                        <TextView
+                            android:id="@+id/value_title_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/ic_title"
+                            android:drawablePadding="6dp"
+                            android:paddingVertical="4dp"
+                            android:drawableTint="@color/theme_color"
+
+                            android:text="Title - Bulb - 1"
+                            android:textColor="@color/text_light"
+                            android:textSize="13sp" />
+
+                        <!-- Key row -->
+                        <TextView
+                            android:id="@+id/value_title_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableTint="@color/theme_color"
+                            android:drawableStart="@drawable/ic_key"
+                            android:drawablePadding="6dp"
+                            android:paddingVertical="4dp"
+                            android:text="Key - my_key"
+                            android:textColor="@color/text_light"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+
+                    <!-- Delete Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/trash_button"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:backgroundTint="@color/theme_color"
+                        android:gravity="center"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:icon="@drawable/ic_trash"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:shapeAppearanceOverlay="@style/CircleButtonStyle" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/point_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="Point Time"
+                android:textColor="@color/text_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/point_time_input"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_field_bg"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Select Date - Time"
+                android:padding="14dp"
+                android:textColor="?attr/colorOnBackground" />
+
+            <TextView
+                android:id="@+id/minute_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:text="Time in Minutes"
+                android:textColor="@color/text_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/minute_time_input"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/input_field_bg"
+                android:hint="e.g. 10, 15, 30"
+                android:inputType="number"
+                android:padding="14dp"
+                android:textColor="?attr/colorOnBackground" />
+
+            <!-- Choose Type -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="16dp"
+                android:text="Choose Type"
+                android:textColor="@color/text_light"
+                android:textStyle="bold" />
+
+            <!-- Type Selector -->
+            <!--                <HorizontalScrollView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:scrollbars="none"-->
+            <!--                    android:overScrollMode="never">-->
+
+            <!--                    <LinearLayout-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:orientation="horizontal"-->
+            <!--                        android:paddingBottom="8dp">-->
+
+
+            <!--                        &lt;!&ndash; Unselected &ndash;&gt;-->
+            <!--                        <androidx.cardview.widget.CardView-->
+            <!--                            android:id="@+id/icon_option_2"-->
+            <!--                            android:layout_width="64dp"-->
+            <!--                            android:layout_height="64dp"-->
+            <!--                            app:cardCornerRadius="32dp"-->
+            <!--                            app:cardBackgroundColor="@color/background_light"-->
+            <!--                            app:cardElevation="0dp"-->
+            <!--                            android:layout_marginEnd="16dp">-->
+
+            <!--                            <ImageView-->
+            <!--                                android:layout_width="32dp"-->
+            <!--                                android:layout_height="32dp"-->
+            <!--                                android:src="@drawable/blub_icon"-->
+            <!--                                app:tint="@color/theme_color"-->
+            <!--                                android:layout_gravity="center"/>-->
+            <!--                        </androidx.cardview.widget.CardView>-->
+
+            <!--                        <androidx.cardview.widget.CardView-->
+            <!--                            android:id="@+id/icon_option_3"-->
+            <!--                            android:layout_width="64dp"-->
+            <!--                            android:layout_height="64dp"-->
+            <!--                            app:cardCornerRadius="32dp"-->
+            <!--                            app:cardBackgroundColor="@color/background_light"-->
+            <!--                            app:cardElevation="0dp"-->
+            <!--                            android:layout_marginEnd="16dp">-->
+
+            <!--                            <ImageView-->
+            <!--                                android:layout_width="32dp"-->
+            <!--                                android:layout_height="32dp"-->
+            <!--                                android:src="@drawable/fan_icon"-->
+            <!--                                app:tint="@color/theme_color"-->
+            <!--                                android:layout_gravity="center"/>-->
+            <!--                        </androidx.cardview.widget.CardView>-->
+
+            <!--                        &lt;!&ndash; Selected &ndash;&gt;-->
+            <!--                        <androidx.cardview.widget.CardView-->
+            <!--                            android:id="@+id/icon_option_1"-->
+            <!--                            android:layout_width="64dp"-->
+            <!--                            android:layout_height="64dp"-->
+            <!--                            app:cardCornerRadius="32dp"-->
+            <!--                            app:cardBackgroundColor="@color/theme_color"-->
+            <!--                            app:cardElevation="0dp"-->
+            <!--                            android:layout_marginEnd="14dp">-->
+
+            <!--                            <ImageView-->
+            <!--                                android:layout_width="32dp"-->
+            <!--                                android:layout_height="32dp"-->
+            <!--                                android:src="@drawable/category_icon"-->
+            <!--                                app:tint="@color/text_white"-->
+            <!--                                android:layout_gravity="center"/>-->
+            <!--                        </androidx.cardview.widget.CardView>-->
+
+            <!--                    </LinearLayout>-->
+            <!--                </HorizontalScrollView>-->
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontal_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/device_icon_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingBottom="8dp" />
+            </HorizontalScrollView>
+
+        </LinearLayout>
 
         <!-- Save button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/save_device_btn"
             android:layout_width="match_parent"
             android:layout_height="70dp"
+            android:layout_marginTop="16dp"
             android:text="Save Device"
-            android:textSize="18sp"
-            android:textStyle="bold"
             android:textAllCaps="false"
             android:textColor="@color/text_white"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:backgroundTint="@color/theme_color"
             app:cornerRadius="16dp"
-            android:layout_marginTop="16dp"
-            app:elevation="4dp"/>
+            app:elevation="4dp" />
 
     </LinearLayout>
 </ScrollView>

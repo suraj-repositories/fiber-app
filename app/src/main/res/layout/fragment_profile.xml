@@ -36,7 +36,8 @@
                 android:layout_width="120dp"
                 android:layout_height="120dp"
                 app:cardCornerRadius="60dp"
-                app:cardElevation="4dp"
+                android:elevation="0dp"
+                app:cardUseCompatPadding="false"
                 app:cardBackgroundColor="@color/gray_100">
 
                 <ImageView
@@ -59,6 +60,7 @@
                 android:focusable="true">
 
                 <ImageView
+                    android:id="@+id/profile_image"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:layout_gravity="center"
@@ -71,9 +73,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-
-                android:padding="12dp">
+                android:orientation="vertical" >
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -140,22 +140,99 @@
 
             </LinearLayout>
 
-        <View android:layout_width="match_parent" android:layout_height="32dp"/>
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_save_profile"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:layout_marginTop="10dp"
             android:text="Save Changes"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginHorizontal="10dp"
             android:textAllCaps="false"
             android:textColor="@color/gray_100"
             app:backgroundTint="@color/theme_color"
-            app:cornerRadius="12dp"
+            app:cornerRadius="12dp" />
 
-            app:elevation="4dp"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/linear_border"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X-API-KEY"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/text_primary" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="6dp"
+                android:paddingHorizontal="10dp"
+                app:cardBackgroundColor="@color/progress_background"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/value_title_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/ic_key"
+                        android:drawablePadding="6dp"
+                        android:paddingVertical="4dp"
+                        android:drawableTint="@color/theme_color"
+                        android:text="$2y$10$*******************WSl3xJW"
+                        android:textColor="@color/theme_color"
+                        android:textSize="13sp" />
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/trash_button"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:backgroundTint="@color/theme_color"
+                        android:gravity="center"
+                        android:insetLeft="0dp"
+                        android:insetTop="0dp"
+                        android:insetRight="0dp"
+                        android:insetBottom="0dp"
+                        app:icon="@drawable/ic_copy"
+                        app:iconGravity="textStart"
+                        app:iconPadding="0dp"
+                        app:shapeAppearanceOverlay="@style/CircleButtonStyle" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/no_values"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="12dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="12dp"
+                android:gravity="center"
+                android:text="Notice: For security purposes, this API key is displayed only once. Please save it immediately, as it will not be retrievable later."
+                android:textColor="@color/text_primary" />
+
+        </LinearLayout>
     </LinearLayout>
+
+
+
+
 </ScrollView>
