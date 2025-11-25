@@ -4,6 +4,7 @@ Android application for fiber solution
  
 ## Images
 
+<p align="center">
 <div style="display: flex;flex-direction: column; grid-gap: 10px;">
    <div style="display: flex; grid-gap: 10px;">
         <img src="screenshots/1.jpeg" alt="screenshots" width="32%" style="border: 2px solid lightgreen"/>
@@ -13,6 +14,7 @@ Android application for fiber solution
      <div style="display: flex; grid-gap: 10px;">
      </div>
 </div>
+</p>
 <br>
 <br>
  
