@@ -56,7 +56,7 @@ public class SignUpActivity extends AppCompatActivity {
         usernameInput = findViewById(R.id.username);
         passwordInput = findViewById(R.id.password);
 
-        userService = new UserServiceImpl();
+        userService = new UserServiceImpl(this);
 
         alreadyHaveAnAccount = findViewById(R.id.alreadyHaveAnAccount);
         alreadyHaveAnAccount.setOnClickListener(view -> {

@@ -155,6 +155,7 @@
 
 
         <LinearLayout
+            android:id="@+id/api_key_area"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -187,7 +188,7 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/value_title_1"
+                        android:id="@+id/api_key_txt"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -201,7 +202,7 @@
 
 
                     <com.google.android.material.button.MaterialButton
-                        android:id="@+id/trash_button"
+                        android:id="@+id/copy_button"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:backgroundTint="@color/theme_color"

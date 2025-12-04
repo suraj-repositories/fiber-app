@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
         usernameInput = findViewById(R.id.usernameInput);
         passwordInput = findViewById(R.id.passwordInput);
-        UserService userService = new UserServiceImpl();
+        UserService userService = new UserServiceImpl(this);
 
         loginButton = findViewById(R.id.loginBtn);
         loginButton.setOnClickListener(e -> {
